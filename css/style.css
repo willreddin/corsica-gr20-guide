@@ -1,0 +1,211 @@
+/*------------------------------------*\
+    RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0b1 | 201101 
+    NOTE:WORK IN PROGRESS
+    USE WITH CAUTION AND TEST WITH ABANDON */
+
+body{ 
+    margin: 0;
+    background-color: black;
+}
+
+
+nav{
+    height: 7%;
+    list-style-type: none; 
+    text-align: center;
+    background-color: black;
+    margin-bottom: -50px;
+    padding-bottom: 25px;
+}
+
+nav ul{
+    padding-top: 20px;
+    margin: 0;
+}
+
+nav li{
+    display: inline;
+    font-family: 'Droid Serif', serif;
+    font-size: 18px;
+    padding: 100px;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover
+{ 
+    text-decoration: underline;
+}
+
+header{
+    background-image: url(img/header-crop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 384px;
+    margin: 0;
+
+}
+
+
+h1{
+    font-family: 'Droid Serif', serif;
+    color: white;
+    text-align: left;
+    padding-left: 25px;
+    font-size: 64px;
+    padding-top: 50px;
+}
+
+
+h2{
+
+   font-family: 'Open Sans', sans-serif;
+   font-size: 48px;
+   font-weight: 700; 
+}
+
+h3{
+    font-family: 'Droid Serif', serif;
+    text-align: left;
+    font-size: 24px;
+    padding-left: 25px;
+}
+
+h3 :hover {
+    
+    text-decoration: underline;
+}
+
+
+p{
+    text-align: left;
+    font-family: 'Open Sans', Sans;
+    font-size: 18px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+ul {
+
+}
+
+li {
+    text-align: left;
+    font-family: 'Open Sans', Sans;
+    font-size: 16px;
+}
+
+.tg  {
+    border-collapse:collapse;
+    border-spacing:0;
+    border-width:1px;
+    border-style:none;
+    }
+
+.tg td{
+    font-family:Arial, sans-serif;
+    font-size:22px;
+    padding:10px 5px 0px 25px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    }
+
+.tg th{
+    font-family:Arial, sans-serif;
+    font-size:22px;
+    font-weight:normal;
+    padding:10px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    }
+
+.tg .tg-lt3p{
+    font-size:22px;
+    }
+
+.tg .tg-2662{
+    font-weight:bold;
+    font-size:22px;
+    }
+
+img{
+    vertical-align: middle;
+    width: 600px;
+    height: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+}
+
+
+#fixed{
+    
+    display: block;
+    padding: 10px 10px 10px 10px;
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: fixed;
+
+}
+
+#map-canvas{
+    width: 100%
+    height: 100%;
+}   
+
+#contact{
+    float: left;
+    width: 40%;
+    margin: 1%;
+    padding-left: 25px;
+    background-color: #f3f3f3;  
+    font-size: 18pt;  
+    line-height: 16pt;
+    border-radius: 5px;
+}
+
+#stages{
+    margin-top: 1%;
+    margin-left: 45%;
+    border-left: 1px;
+    margin-right: 1%;
+}
+
+#stages .ui-accordion-content {  
+
+    background-color: #f3f3f3;  
+    font-size: 18pt;  
+    line-height: 16pt;
+    padding: 5%;
+    border-radius: 5px;
+
+} 
+
+.ui-accordion-header a{ 
+  
+    text-decoration: none;
+    color: white;    
+}   
+ 
+
+:focus, :active {  
+    outline: 0;  
+} 
+
+
+
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+/* GO! */
