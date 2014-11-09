@@ -616,7 +616,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage2 = new google.maps.Polyline({
@@ -624,7 +624,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage3 = new google.maps.Polyline({
@@ -632,7 +632,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage4 = new google.maps.Polyline({
@@ -640,7 +640,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage5 = new google.maps.Polyline({
@@ -648,7 +648,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage6 = new google.maps.Polyline({
@@ -656,7 +656,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage7 = new google.maps.Polyline({
@@ -664,7 +664,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage8 = new google.maps.Polyline({
@@ -672,7 +672,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage9 = new google.maps.Polyline({
@@ -680,7 +680,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage10 = new google.maps.Polyline({
@@ -688,7 +688,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage11 = new google.maps.Polyline({
@@ -696,7 +696,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage12 = new google.maps.Polyline({
@@ -704,7 +704,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage13 = new google.maps.Polyline({
@@ -712,7 +712,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage14 = new google.maps.Polyline({
@@ -720,7 +720,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });
 
         var stage15 = new google.maps.Polyline({
@@ -728,7 +728,7 @@
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
-          strokeWeight: 2
+          strokeWeight: 4
         });         
 
         //draw each of the stages
@@ -753,6 +753,84 @@
     	map.setZoom(12);
     	map.setCenter(marker1.getPosition());
   		});
+
+        //when you click on a polygon in the stage 1 object, this will take you to the relevant stage
+  		google.maps.event.addListener(stage1, 'click', function(){
+
+  				$("#stages").accordion({ active: 1, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage2, 'click', function(){
+
+  				$("#stages").accordion({ active: 2, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage3, 'click', function(){
+			
+  				$("#stages").accordion({ active: 3, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage4, 'click', function(){
+
+  				$("#stages").accordion({ active: 4, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage5, 'click', function(){
+
+  				$("#stages").accordion({ active: 5, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage6, 'click', function(){
+  				alert("you clicked on something in stage1!");
+  				$("#stages").accordion({ active: 6, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage7, 'click', function(){
+
+  				$("#stages").accordion({ active: 7, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage8, 'click', function(){
+
+  				$("#stages").accordion({ active: 8, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage9, 'click', function(){
+
+  				$("#stages").accordion({ active: 9, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage10, 'click', function(){
+
+  				$("#stages").accordion({ active: 10, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage11, 'click', function(){
+
+  				$("#stages").accordion({ active: 11, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage12, 'click', function(){
+
+  				$("#stages").accordion({ active: 12, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage13, 'click', function(){
+
+  				$("#stages").accordion({ active: 13, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage14, 'click', function(){
+
+  				$("#stages").accordion({ active: 14, event: "click" });
+  		});
+
+  		google.maps.event.addListener(stage15, 'click', function(){
+
+  				$("#stages").accordion({ active: 15, event: "click" });
+  		});
+
+
     }
 			
    	//load the map when the page is loaded
@@ -777,7 +855,7 @@
 <nav>
 	<ul>
   		<li><a href="index.html">Home</a></li>
-  		<li><a href="about.html">About</a></li>
+  		<li><a href="about.html">Links</a></li>
   		<li><a href="contact.html">Contact</a></li>
 	</ul>
 </nav>
