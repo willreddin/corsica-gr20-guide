@@ -3,12 +3,17 @@
 <head>
     <meta charset="utf-8">
     <title>GRtwenty</title>
+    
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    
     <!--css ref-->
     <link rel="stylesheet" href="css/style.css">
+    
     <!--jquery ref-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  
+    
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+    
     <!--accordian script-->
     <script>
     $(function() {
@@ -28,6 +33,13 @@
     });
 
     });
+
+    //$(window).scroll(function(){
+    //	if ($(window).scrollTop() > 384){
+    //			$('#map-canvas').css("position", "fixed");
+    //	}
+
+    //});
 
 
 
@@ -781,7 +793,7 @@
   		});
 
   		google.maps.event.addListener(stage6, 'click', function(){
-  				alert("you clicked on something in stage1!");
+  				
   				$("#stages").accordion({ active: 6, event: "click" });
   		});
 
@@ -871,9 +883,9 @@
 </header>
 
 <body>
-<div id="fixed">	
+<!--<div id="fixed">-->
 <div id="map-canvas" style="width:100%; height:100%"></div>
-</div>
+<!--</div>-->
 
 <div id="stages">
   
