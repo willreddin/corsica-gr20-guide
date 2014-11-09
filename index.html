@@ -12,9 +12,24 @@
     <!--accordian script-->
     <script>
     $(function() {
-    
+    var icons = {
+      header: "ui-icon-triangle-1-e",
+      activeHeader: "ui-icon-triangle-1-s"
+    };
+
     $( "#stages" ).accordion({ autoHeight:  false});
+
+    $( "#toggle" ).button().click(function() {
+      if ( $( "#stages" ).accordion( "option", "icons" ) ) {
+        $( "#stages" ).accordion( "option", "icons", null );
+      } else {
+        $( "#stages" ).accordion( "option", "icons", icons );
+      }
     });
+
+    });
+
+
 
     </script>
 
@@ -41,7 +56,7 @@
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
         //code for stage 1 beginning marker
-        var marker = new google.maps.Marker({
+        var marker1 = new google.maps.Marker({
           position: new google.maps.LatLng(42.508236, 8.852363),
           map: map,
           title: 'The start - Calenzana'
@@ -49,28 +64,28 @@
 
         //code for stage 1 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.471494, 8.908476),
+          position: new google.maps.LatLng(42.46504000,8.90695000),
           map: map,
           title: 'Refuge dOrtu'
         });
 
         //code for stage 2 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.425758000, 8.921510194),
+          position: new google.maps.LatLng(42.42886000,8.91240000),
           map: map,
           title: 'Refuge de Carrozzu'
         });
 
         //code for stage 3 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.403353 , 8.922921),
+          position: new google.maps.LatLng(42.40338000,8.92236000),
           map: map,
           title: 'Haute Asco'
         });
 
         //code for stage 4 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.354722000, 8.908611000),
+          position: new google.maps.LatLng(42.36220000,8.90927000),
           map: map,
           title: 'Auberge U Vallone'
         });
@@ -84,14 +99,14 @@
 
         //code for stage 6 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.220848000, 8.980248000),
+          position: new google.maps.LatLng(42.220052, 8.980449),
           map: map,
           title: 'Refuge de Manganu'
         });
 
         //code for stage 7 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.196994781, 9.051442146),
+          position: new google.maps.LatLng(42.198453, 9.052359),
           map: map,
           title: 'Refuge de Petra Piana'
         });
@@ -105,14 +120,14 @@
 
         //code for stage 9 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.120592626, 9.127583601),
+          position: new google.maps.LatLng(42.12632000,9.13728000),
           map: map,
           title: 'Vizzavona'
         });
 
         //code for stage 10 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(42.077228546, 9.147330284),
+          position: new google.maps.LatLng(42.07753000,9.15084000),
           map: map,
           title: 'Bergeries d E Capanelle'
         });
@@ -126,7 +141,7 @@
 
         //code for stage 12 end marker
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(41.934167000, 9.206667000),
+          position: new google.maps.LatLng(41.93493000,9.20517000),
           map: map,
           title: 'Refuge dUsciolu'
         });
@@ -152,9 +167,10 @@
           title: 'Conca'
         });
 
-        //code for stage 1 line path
-        var flightPlanCoordinates = [
-          	new google.maps.LatLng( 42.50606000,8.85520000 ) ,
+        //code for stage line paths
+        var stage1path = [
+        
+            new google.maps.LatLng( 42.50606000,8.85520000 ) ,
 			new google.maps.LatLng( 42.50385000,8.85803000 ) ,
 			new google.maps.LatLng( 42.50138000,8.85837000 ) ,
 			new google.maps.LatLng( 42.50182000,8.85691000 ) ,
@@ -179,7 +195,13 @@
 			new google.maps.LatLng( 42.47346000,8.88858000 ) ,
 			new google.maps.LatLng( 42.46884000,8.90704000 ) ,
 			new google.maps.LatLng( 42.46701000,8.90893000 ) ,
-			new google.maps.LatLng( 42.46504000,8.90695000 ) ,
+			new google.maps.LatLng( 42.46504000,8.90695000 ) 
+			
+			];
+
+		var stage2path = [
+
+			new google.maps.LatLng( 42.46504000,8.90695000 ) , 
 			new google.maps.LatLng( 42.46052000,8.90605000 ) ,
 			new google.maps.LatLng( 42.45761000,8.90244000 ) ,
 			new google.maps.LatLng( 42.44925000,8.90330000 ) ,
@@ -187,6 +209,12 @@
 			new google.maps.LatLng( 42.44355000,8.91377000 ) ,
 			new google.maps.LatLng( 42.43658000,8.91704000 ) ,
 			new google.maps.LatLng( 42.43266000,8.91309000 ) ,
+			new google.maps.LatLng( 42.42886000,8.91240000 ) ,
+
+			];	
+			
+		var stage3path = [
+
 			new google.maps.LatLng( 42.42886000,8.91240000 ) ,
 			new google.maps.LatLng( 42.42581000,8.90073000 ) ,
 			new google.maps.LatLng( 42.42455000,8.89781000 ) ,
@@ -199,8 +227,14 @@
 			new google.maps.LatLng( 42.40719000,8.91171000 ) ,
 			new google.maps.LatLng( 42.40680000,8.91412000 ) ,
 			new google.maps.LatLng( 42.40338000,8.92236000 ) ,
+
+
+			];
+
+		var stage4path = [		
+
+			new google.maps.LatLng( 42.40338000,8.92236000 ) ,
 			new google.maps.LatLng( 42.40119000,8.92120000 ) ,
-			new google.maps.LatLng( 42.40030000,8.92094000 ) ,
 			new google.maps.LatLng( 42.39859000,8.91983000 ) ,
 			new google.maps.LatLng( 42.39656000,8.91897000 ) ,
 			new google.maps.LatLng( 42.39491000,8.91819000 ) ,
@@ -222,6 +256,13 @@
 			new google.maps.LatLng( 42.36752000,8.90721000 ) ,
 			new google.maps.LatLng( 42.36562000,8.90832000 ) ,
 			new google.maps.LatLng( 42.36543000,8.90738000 ) ,
+			new google.maps.LatLng( 42.36220000,8.90927000 ) ,
+
+
+			];
+
+		var stage5path = [
+
 			new google.maps.LatLng( 42.36220000,8.90927000 ) ,
 			new google.maps.LatLng( 42.35202000,8.90759000 ) ,
 			new google.maps.LatLng( 42.34454000,8.90382000 ) ,
@@ -248,7 +289,14 @@
 			new google.maps.LatLng( 42.30355000,8.87532000 ) ,
 			new google.maps.LatLng( 42.29796000,8.88373000 ) ,
 			new google.maps.LatLng( 42.29174000,8.88700000 ) ,
-			new google.maps.LatLng( 42.28945000,8.89472000 ) ,
+			new google.maps.LatLng( 42.286944000, 8.892778000 ) ,
+
+
+			];
+
+		var stage6path = [
+
+			new google.maps.LatLng( 42.286944000, 8.892778000 ) ,
 			new google.maps.LatLng( 42.28450000,8.89489000 ) ,
 			new google.maps.LatLng( 42.28259000,8.89506000 ) ,
 			new google.maps.LatLng( 42.28259000,8.89215000 ) ,
@@ -277,6 +325,12 @@
 			new google.maps.LatLng( 42.23660000,8.97437000 ) ,
 			new google.maps.LatLng( 42.22999000,8.97729000 ) ,
 			new google.maps.LatLng( 42.22097000,8.98038000 ) ,
+
+			];
+
+		var stage7path = [	
+			
+			new google.maps.LatLng( 42.22097000,8.98038000 ) ,
 			new google.maps.LatLng( 42.21309000,8.98536000 ) ,
 			new google.maps.LatLng( 42.21092000,8.98931000 ) ,
 			new google.maps.LatLng( 42.21105000,8.99394000 ) ,
@@ -292,6 +346,11 @@
 			new google.maps.LatLng( 42.19995000,9.04660000 ) ,
 			new google.maps.LatLng( 42.19823000,9.05200000 ) ,
 			new google.maps.LatLng( 42.19757000,9.05042000 ) ,
+
+			];
+
+		var stage8path = [
+
 			new google.maps.LatLng( 42.19490000,9.05437000 ) ,
 			new google.maps.LatLng( 42.19630000,9.06192000 ) ,
 			new google.maps.LatLng( 42.18905000,9.07445000 ) ,
@@ -303,8 +362,12 @@
 			new google.maps.LatLng( 42.16119000,9.08132000 ) ,
 			new google.maps.LatLng( 42.15788000,9.07771000 ) ,
 			new google.maps.LatLng( 42.15572000,9.07479000 ) ,
+
+			];
+			
+		var stage9path = [
+			
 			new google.maps.LatLng( 42.15228000,9.07256000 ) ,
-			new google.maps.LatLng( 42.15076000,9.07033000 ) ,
 			new google.maps.LatLng( 42.14681000,9.07187000 ) ,
 			new google.maps.LatLng( 42.13943000,9.07531000 ) ,
 			new google.maps.LatLng( 42.13586000,9.07737000 ) ,
@@ -323,6 +386,13 @@
 			new google.maps.LatLng( 42.11791000,9.11857000 ) ,
 			new google.maps.LatLng( 42.11969000,9.12526000 ) ,
 			new google.maps.LatLng( 42.12708000,9.13230000 ) ,
+			new google.maps.LatLng( 42.12632000,9.13728000 ) ,
+
+			
+			];
+
+		var stage10path = [
+			
 			new google.maps.LatLng( 42.12632000,9.13728000 ) ,
 			new google.maps.LatLng( 42.12937000,9.14243000 ) ,
 			new google.maps.LatLng( 42.13166000,9.14517000 ) ,
@@ -350,6 +420,11 @@
 			new google.maps.LatLng( 42.08467000,9.15410000 ) ,
 			new google.maps.LatLng( 42.08199000,9.15565000 ) ,
 			new google.maps.LatLng( 42.07753000,9.15084000 ) ,
+
+			];
+
+		var stage11path = [
+
 			new google.maps.LatLng( 42.07511000,9.15195000 ) ,
 			new google.maps.LatLng( 42.07359000,9.15316000 ) ,
 			new google.maps.LatLng( 42.07155000,9.15058000 ) ,
@@ -372,9 +447,14 @@
 			new google.maps.LatLng( 42.02782000,9.15985000 ) ,
 			new google.maps.LatLng( 42.02693000,9.17221000 ) ,
 			new google.maps.LatLng( 42.02757000,9.18011000 ) ,
-			new google.maps.LatLng( 42.02731000,9.18594000 ) ,
+			new google.maps.LatLng( 42.02731000,9.18594000 ) ,	
 			new google.maps.LatLng( 42.02910000,9.19109000 ) ,
 			new google.maps.LatLng( 42.02782000,9.19470000 ) ,
+
+			];
+
+		var stage12path = [	
+
 			new google.maps.LatLng( 42.02413000,9.19847000 ) ,
 			new google.maps.LatLng( 42.02680000,9.20105000 ) ,
 			new google.maps.LatLng( 42.02655000,9.20534000 ) ,
@@ -400,7 +480,12 @@
 			new google.maps.LatLng( 41.94093000,9.21650000 ) ,
 			new google.maps.LatLng( 41.94080000,9.21375000 ) ,
 			new google.maps.LatLng( 41.93697000,9.21169000 ) ,
-			new google.maps.LatLng( 41.93493000,9.20517000 ) ,
+			new google.maps.LatLng( 41.93493000,9.20517000 ) ,			
+			];
+
+		var stage13path = [
+
+			new google.maps.LatLng( 41.93493000,9.20517000 ) ,	
 			new google.maps.LatLng( 41.92279000,9.19144000 ) ,
 			new google.maps.LatLng( 41.91781000,9.18457000 ) ,
 			new google.maps.LatLng( 41.91449000,9.18079000 ) ,
@@ -427,6 +512,12 @@
 			new google.maps.LatLng( 41.84547000,9.20757000 ) ,
 			new google.maps.LatLng( 41.84266000,9.21015000 ) ,
 			new google.maps.LatLng( 41.84100000,9.21444000 ) ,
+
+
+			];
+
+		var stage14path = [
+
 			new google.maps.LatLng( 41.84023000,9.21581000 ) ,
 			new google.maps.LatLng( 41.83627000,9.21289000 ) ,
 			new google.maps.LatLng( 41.83332000,9.21392000 ) ,
@@ -447,6 +538,12 @@
 			new google.maps.LatLng( 41.79750000,9.21976000 ) ,
 			new google.maps.LatLng( 41.79609000,9.22440000 ) ,
 			new google.maps.LatLng( 41.79522000,9.22877000 ) ,
+
+
+			];
+
+		var stage15path = [
+
 			new google.maps.LatLng( 41.79202000,9.23066000 ) ,
 			new google.maps.LatLng( 41.79113000,9.23255000 ) ,
 			new google.maps.LatLng( 41.79062000,9.23504000 ) ,
@@ -510,33 +607,171 @@
 			new google.maps.LatLng( 41.74235000,9.32971000 ) ,
 			new google.maps.LatLng( 41.73959000,9.33048000 ) ,
 			new google.maps.LatLng( 41.73735000,9.33314000 )
-          
-        ];
-  
-        var flightPath1 = new google.maps.Polyline({
-          path: flightPlanCoordinates,
+      		
+      		];
+  		
+  		//define each of the stages and their lines
+        var stage1 = new google.maps.Polyline({
+          path: stage1path,
           geodesic: true,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
           strokeWeight: 2
         });
 
-        flightPath1.setMap(map);
+        var stage2 = new google.maps.Polyline({
+          path: stage2path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage3 = new google.maps.Polyline({
+          path: stage3path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage4 = new google.maps.Polyline({
+          path: stage4path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage5 = new google.maps.Polyline({
+          path: stage5path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage6 = new google.maps.Polyline({
+          path: stage6path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage7 = new google.maps.Polyline({
+          path: stage7path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage8 = new google.maps.Polyline({
+          path: stage8path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage9 = new google.maps.Polyline({
+          path: stage9path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage10 = new google.maps.Polyline({
+          path: stage10path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage11 = new google.maps.Polyline({
+          path: stage11path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage12 = new google.maps.Polyline({
+          path: stage12path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage13 = new google.maps.Polyline({
+          path: stage13path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage14 = new google.maps.Polyline({
+          path: stage14path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        var stage15 = new google.maps.Polyline({
+          path: stage15path,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });         
+
+        //draw each of the stages
+        stage1.setMap(map);
+        stage2.setMap(map);
+        stage3.setMap(map);
+        stage4.setMap(map);
+        stage5.setMap(map);
+ 		stage6.setMap(map);
+		stage7.setMap(map);
+		stage8.setMap(map);
+		stage9.setMap(map);
+		stage10.setMap(map);
+		stage11.setMap(map);	
+		stage12.setMap(map);
+		stage13.setMap(map);
+		stage14.setMap(map);
+		stage15.setMap(map);
+
+		        //focus on marker when clicked
+        google.maps.event.addListener(marker1, 'click', function() {
+    	map.setZoom(12);
+    	map.setCenter(marker1.getPosition());
+  		});
     }
 			
+   	//load the map when the page is loaded
+    google.maps.event.addDomListener(window, 'load', initialize);
 
-        google.maps.event.addDomListener(window, 'load', initialize);
+
 
         </script>
 
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
         		$(document).ready(function () {
     				$('#fixed').css('marginTop', $('#header').outerHeight(true) );
 				});
         </script>
-    <!--[if IE]>
+
+    [if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    [endif]
+
 </head>
 
 <nav>
@@ -577,6 +812,7 @@
     <p>Click on the stage headings below to see information on each stage.</p>
   </div>
 
+  <!--stage 1 content-->
   <h3><a href="#">Stage 1</a></h3>
   <div>
 
@@ -601,29 +837,75 @@
 
   </div>
 
+<!--stage 2 content-->
   <h3><a href="#">Stage 2</a></h3>
   <div>
-    <p>
-    stage 2 goes here
-    </p>
-  </div>
 
+    <table class="tg">
+  	<tr>
+    <td class="tg-2662">Length</td>
+    <td class="tg-lt3p">8km</td>
+  	</tr>
+  	<tr>
+    <td class="tg-2662">Total ascent</td>
+    <td class="tg-lt3p">750m</td>
+  	</tr>
+  	<td class="tg-2662">Refuge</td>
+    <td class="tg-lt3p">Refuge de Carrozzu</td>
+  	</tr>
+	</table>
+
+    <img src="css/img/corsica-website-images/daytwo.png">
+
+    <p>I Need to add some stuff to this, so it isn't so sparse. But for now here's kind of what the stage div will look like (but with more words). 
+    </p>
+    </div>
+
+<!-- stage 3 content-->
   <h3><a href="#">Stage 3</a></h3>
   <div>
-    <p>
-    stage 3 goes here
+
+    <table class="tg">
+  	<tr>
+    <td class="tg-2662">Length</td>
+    <td class="tg-lt3p">6km</td>
+  	</tr>
+  	<tr>
+    <td class="tg-2662">Total ascent</td>
+    <td class="tg-lt3p">860m</td>
+  	</tr>
+  	<td class="tg-2662">Refuge</td>
+    <td class="tg-lt3p">Haute Asco</td>
+  	</tr>
+	</table>
+
+    <img src="css/img/corsica-website-images/daythreeend.png">
+
+    <p>I Need to add some stuff to this, so it isn't so sparse. But for now here's kind of what the stage div will look like (but with more words). 
     </p>
-    <ul>
-      <li>List item one</li>
-      <li>List item two</li>
-      <li>List item three</li>
-    </ul>
+
   </div>
 
   <h3><a href="#">Stage 4</a></h3>
   <div>
-    <p>
-    stage 4 goes here
+
+    <table class="tg">
+  	<tr>
+    <td class="tg-2662">Length</td>
+    <td class="tg-lt3p">9km</td>
+  	</tr>
+  	<tr>
+    <td class="tg-2662">Total ascent</td>
+    <td class="tg-lt3p">1000m</td>
+  	</tr>
+  	<td class="tg-2662">Refuge</td>
+    <td class="tg-lt3p">Auberge U Vallone</td>
+  	</tr>
+	</table>
+
+    <img src="css/img/corsica-website-images/daythreeend.png">
+
+    <p>I Need to add some stuff to this, so it isn't so sparse. But for now here's kind of what the stage div will look like (but with more words). 
     </p>
   </div>
 

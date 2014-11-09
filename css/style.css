@@ -155,9 +155,11 @@ img{
     width: 40%;
     height: 100%;
     float: left;
-    position: fixed;
+    /*position: fixed;
+    */
 
 }
+
 
 #map-canvas{
     width: 100%
@@ -195,7 +197,7 @@ img{
 .ui-accordion-header a{ 
   
     text-decoration: none;
-    color: white;    
+    color: white;   
 }   
  
 
