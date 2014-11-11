@@ -60,6 +60,7 @@
   
         var myLatlng = new google.maps.LatLng(42.134895, 9.132385);
           var mapOptions = {
+          scrollwheel: false,
           zoom: 9,
           center: myLatlng,
           mapTypeId: google.maps.MapTypeId.TERRAIN
@@ -877,16 +878,22 @@
 
 
 <h1>A guide to the Corsican GR20</h1>
-<h3>Stage by stage</h3>
 
 
 </header>
 
 <body>
-<!--<div id="fixed">-->
-<div id="map-canvas" style="width:100%; height:100%"></div>
-<!--</div>-->
 
+<div id="intro">
+	<h3 class="white">A stage by stage guide to the toughest of the GRs</h3>
+	<p class="white">click on a stage below or scroll down to start at the beginning</p>
+
+</div>
+
+<!--the map of the route-->
+<div id="map-canvas" style="width:100%; height:100%"></div>
+
+<!--stage accordian-->
 <div id="stages">
   
   <h3><a href="#">Introduction</a></h3>
@@ -1243,6 +1250,8 @@
 
 </div>
     
-
+<footer>
+	<p class="white">&copy; 2014 Will Reddin All Rights Reserved</p>
+</footer>
 </body>
 </html>
