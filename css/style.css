@@ -72,7 +72,7 @@ h1{
     font-family: 'Droid Serif', serif;
     color: white;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 25%;
     font-size: 64px;
     padding-top: 50px;
 }
@@ -196,14 +196,14 @@ img{
 
 #stages{
     margin-top: 1%;
-    margin-left: 1%;
+    margin-left: 25%;
     border-left: 1%;
-    margin-right: 1%;
+    margin-right: 25%;
 }
 
 #stages .ui-accordion-content {  
 
-    background-color: #f3f3f3;  
+    background-color: white;  
     font-size: 18pt;  
     line-height: 16pt;
     padding: 5%;
@@ -215,6 +215,14 @@ img{
   
     text-decoration: none;
     color: white;   
+}
+
+.ui-icon-triangle-1-e{
+    color: white;
+}
+
+.ui-icon-triangle-1-s{
+    color: white;
 }   
  
 

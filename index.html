@@ -17,29 +17,19 @@
     <!--accordian script-->
     <script>
     $(function() {
+
     var icons = {
-      header: "ui-icon-triangle-1-e",
-      activeHeader: "ui-icon-triangle-1-s"
+      header: "ui-icon-circle-arrow-e",
+      activeHeader: "ui-icon-circle-arrow-s"
     };
 
-    $( "#stages" ).accordion({ autoHeight:  false});
-
-    $( "#toggle" ).button().click(function() {
-      if ( $( "#stages" ).accordion( "option", "icons" ) ) {
-        $( "#stages" ).accordion( "option", "icons", null );
-      } else {
-        $( "#stages" ).accordion( "option", "icons", icons );
-      }
+    $( "#stages" ).accordion({ 
+    	icons: icons,
+    	autoHeight: false,
+    	animate: 200
     });
 
     });
-
-    //$(window).scroll(function(){
-    //	if ($(window).scrollTop() > 384){
-    //			$('#map-canvas').css("position", "fixed");
-    //	}
-
-    //});
 
 
 
